@@ -1,0 +1,227 @@
+/* Animaciones avanzadas para MVM Consultores */
+
+/* Efecto de encabezado */
+@keyframes titleGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-content h1 {
+  position: relative;
+  animation: textGlow 3s infinite ease-in-out;
+}
+
+.hero-content h1::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: width-pulse 3s infinite ease-in-out;
+}
+
+@keyframes width-pulse {
+  0%, 100% { width: 100px; opacity: 0.7; }
+  50% { width: 150px; opacity: 1; }
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 5px rgba(255,194,14,0.3), 0 0 15px rgba(255,255,255,0.1); }
+  50% { text-shadow: 0 0 10px rgba(255,194,14,0.5), 0 0 25px rgba(255,255,255,0.2); }
+}
+
+/* Efecto flotante para las tarjetas */
+.card, .stat {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.2s);
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Efecto de hover para los encabezados */
+.services-section h2,
+.insights-section h2,
+.contact-section h2,
+.about-text h2 {
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.section-title-container:hover h2,
+.about-text:hover h2 {
+  transform: translateY(-2px);
+  text-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Efecto de iluminación en hover para iconos */
+.card-icon:hover i {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { text-shadow: 0 0 0 rgba(255,194,14,0); }
+  50% { text-shadow: 0 0 10px rgba(255,194,14,0.5); }
+  100% { text-shadow: 0 0 0 rgba(255,194,14,0); }
+}
+
+/* Efecto de cursor */
+body {
+  cursor: default;
+}
+
+a, button, .card, .stat, .about-image, input, textarea {
+  cursor: pointer;
+}
+
+/* Estilo para el scroll */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Animaciones hover elegantes para botones */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 200%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-15deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.btn-primary:hover::after {
+  left: 100%;
+  opacity: 1;
+}
+
+/* Efecto loading para los números */
+.stat p {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(255, 194, 14, 0.1);
+  z-index: -1;
+  transition: width 1s ease;
+}
+
+.stats-in-view .stat p::before {
+  width: 100%;
+}
+
+/* Efecto de ondas al hacer clic en las tarjetas */
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.6;
+  }
+  100% {
+    width: 350px;
+    height: 350px;
+    opacity: 0;
+  }
+}
+
+.card-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: rgba(255, 194, 14, 0.2);
+  border-radius: 50%;
+  animation: ripple 0.8s ease-out;
+}
+
+/* Efectos animados para los iconos de las tarjetas */
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.card-icon-container i {
+  will-change: transform, opacity;
+}
+
+.interactive-card:hover .card-icon-hover {
+  animation: pop 0.6s ease-out forwards;
+}
+
+/* Animación para la aparición de la lista de características */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.interactive-card:hover .card-details li {
+  animation: fadeInUp 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.interactive-card:hover .card-details li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.interactive-card:hover .card-details li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.interactive-card:hover .card-details li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Efecto de texto revelado */
+.hero-content p {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
