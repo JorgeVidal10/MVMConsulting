@@ -225,3 +225,57 @@ a, button, .card, .stat, .about-image, input, textarea {
   from { width: 0 }
   to { width: 100% }
 }
+
+/* Animaciones específicas para el equipo */
+.team-member {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.3s);
+}
+
+.team-photo img {
+  transition: all 0.4s ease;
+}
+
+.team-member:hover .team-photo img {
+  filter: brightness(1.1) contrast(1.05);
+}
+
+/* Efecto de brillo para las fotos del equipo */
+@keyframes photoGlow {
+  0%, 100% { 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 0 rgba(255, 194, 14, 0); 
+  }
+  50% { 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 194, 14, 0.3); 
+  }
+}
+
+.team-member:hover .team-photo {
+  animation: photoGlow 2s ease-in-out infinite;
+}
+
+/* Efecto de entrada escalonada para los miembros del equipo */
+.team-member:nth-child(1) { animation-delay: 0.1s; }
+.team-member:nth-child(2) { animation-delay: 0.3s; }
+.team-member:nth-child(3) { animation-delay: 0.5s; }
+
+/* Animaciones adicionales para el botón de WhatsApp */
+.whatsapp-float {
+  animation: whatsapp-bounce 3s infinite ease-in-out;
+}
+
+@keyframes whatsapp-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.whatsapp-float:hover {
+  animation: none;
+}
