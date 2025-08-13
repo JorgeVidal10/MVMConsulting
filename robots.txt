@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mvmconsultores.com/sitemap.xml
+
+# Disallow backup files
+Disallow: /*_backup.*
+Disallow: /*.bak
+Disallow: /*~
+
+# Allow all CSS and JS files
+Allow: /*.css
+Allow: /*.js
+
+# Security
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Crawl-delay for search engines
+Crawl-delay: 1

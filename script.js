@@ -1,98 +1,193 @@
-// Inicializar AOS (Animate On Scroll)
-document.addEventListener('DOMContentLoaded', function() {
-  // Inicializar la librería de animaciones
-  AOS.init({
-    duration: 800,
-    easing: 'ease-out',
-    once: false,
-    offset: 100,
-    delay: 50,
-  });
-  
-  // Toggle menú móvil
-  const menuBtn = document.getElementById('menuBtn');
-  const navMenu = document.getElementById('navMenu');
-  
-  menuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
+// Performance optimizations and error handling
+(function() {
+  'use strict';
 
-  // Cerrar menú al hacer click en un enlace
-  document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
+  // Throttle function for scroll events
+  /**
+   * @template F extends (...args: any[]) => any
+   * @param {F} func
+   * @param {number} limit
+   * @returns {F}
+   */
+  function throttle(func, limit) {
+    let inThrottle = false;
+    // @ts-ignore - return type compatible for our usage
+    return function() {
+      const args = arguments;
+      // @ts-ignore - not typing this in JS file
+      const context = this;
+      if (!inThrottle) {
+        // @ts-ignore
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
       }
-    });
-  });
+    }
+  }
 
-  // Añadir clase activa en navegación según la sección visible
-  const sections = document.querySelectorAll('section[id]');
-  
-  function highlightNavOnScroll() {
-    const scrollY = window.scrollY;
-    
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 100;
-      const sectionId = current.getAttribute('id');
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    try {
+      // Initialize AOS with error handling
+      // Use window.AOS to avoid TS name lookup issues
+      const aos = /** @type {any} */ (window).AOS;
+      if (aos) {
+        aos.init({
+          duration: 800,
+          easing: 'ease-out',
+          once: true, // Changed to true for better performance
+          offset: 100,
+          delay: 50,
+          disable: window.innerWidth < 768 // Disable on mobile for performance
+        });
+      }
       
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active');
-      } else {
-        document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active');
+      // Mobile menu functionality
+      initializeMobileMenu();
+      
+      // Navigation highlighting
+      initializeNavigation();
+      
+      // Image error handling
+      initializeImageHandling();
+      
+      // Performance monitoring
+      if ('performance' in window) {
+        window.addEventListener('load', function() {
+          const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+          console.log('Page load time:', loadTime + 'ms');
+        });
+      }
+      
+    } catch (error) {
+      console.error('Error initializing scripts:', error);
+    }
+  });
+
+  // Mobile menu functionality
+  function initializeMobileMenu() {
+    const menuBtn = /** @type {HTMLElement | null} */(document.getElementById('menuBtn'));
+    const navMenu = /** @type {HTMLElement | null} */(document.getElementById('navMenu'));
+    
+    if (!menuBtn || !navMenu) return;
+    
+    menuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      navMenu.classList.toggle('active');
+      
+      // Update aria attributes for accessibility
+      const isExpanded = navMenu.classList.contains('active');
+      menuBtn.setAttribute('aria-expanded', String(isExpanded));
+    });
+
+    // Close menu when clicking on links
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const t = /** @type {EventTarget|null} */(e.target);
+      if (t instanceof Node && !navMenu.contains(t) && !menuBtn.contains(t)) {
+        if (navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
       }
     });
   }
-  
-  window.addEventListener('scroll', highlightNavOnScroll);
 
-});
-
-// Agregar estilo de enlace activo en navegación
-document.addEventListener('DOMContentLoaded', function() {
-  // Añadir clase activa al estilo para el enlace activo
-  const styleSheet = document.styleSheets[0];
-  const cssRules = `.nav-menu a.active { color: var(--primary); }
-                    .nav-menu a.active::after { width: 100%; }`;
-  
-  if (styleSheet.insertRule) {
-    styleSheet.insertRule(cssRules, styleSheet.cssRules.length);
-  } else if (styleSheet.addRule) {
-    styleSheet.addRule(cssRules, -1);
-  }
-
-  // Verificar que las imágenes cargan correctamente
-  const aboutImage = document.querySelector('.about-image img');
-  if (aboutImage) {
-    aboutImage.addEventListener('error', function() {
-      // Si la imagen no carga, intentar con un placeholder elegante
-      this.src = 'https://via.placeholder.com/800x600/003366/FFFFFF?text=MVM+Consultores';
-      this.alt = 'MVM Consultores';
-      // Agregar clases para un mejor estilo
-      this.classList.add('placeholder-image');
-    });
-
-    // Efectos de parallax para la imagen
-    document.addEventListener('mousemove', function(e) {
-      if (window.innerWidth > 768) { // Solo en pantallas grandes
-        const mouseX = e.clientX / window.innerWidth - 0.5;
-        const mouseY = e.clientY / window.innerHeight - 0.5;
+  // Navigation highlighting with improved performance
+  function initializeNavigation() {
+    const sections = /** @type {NodeListOf<HTMLElement>} */(document.querySelectorAll('section[id]'));
+    const navLinks = document.querySelectorAll('.nav-menu a[href*="#"]');
+    
+    if (sections.length === 0 || navLinks.length === 0) return;
+    
+    const highlightNavOnScroll = throttle(function() {
+      const scrollY = window.scrollY;
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
         
-        aboutImage.style.transform = `perspective(1000px) rotateY(${mouseX * 5}deg) rotateX(${-mouseY * 5}deg) scale(1.05)`;
-        aboutImage.style.transition = 'transform 0.1s ease-out';
-      }
-    });
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href') || '';
+        if (current && href.includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    }, 100);
+    
+    window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
+  }
 
-    // Restablecer cuando el ratón sale del área
-    document.querySelector('.about-section').addEventListener('mouseleave', function() {
-      aboutImage.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale(1)';
-      aboutImage.style.transition = 'transform 0.5s ease-out';
-    });
+  // Enhanced image handling with lazy loading
+  function initializeImageHandling() {
+    // Handle about section image
+    const aboutImage = /** @type {HTMLImageElement | null} */(document.querySelector('.about-image img'));
+    if (aboutImage) {
+      aboutImage.addEventListener('error', function() {
+        aboutImage.src = 'https://via.placeholder.com/800x600/003366/FFFFFF?text=MVM+Consultores';
+        aboutImage.alt = 'MVM Consultores - Imagen de respaldo';
+        aboutImage.classList.add('placeholder-image');
+      });
+
+      // Optimized parallax effect
+      const aboutSection = document.querySelector('.about-section');
+      if (aboutSection && window.innerWidth > 768) {
+        // @ts-ignore - callback param typed inside as MouseEvent
+        const handleMouseMove = throttle(function(e) {
+          const me = /** @type {MouseEvent} */(e);
+          const rect = aboutSection.getBoundingClientRect();
+          const mouseX = (me.clientX - rect.left) / rect.width - 0.5;
+          const mouseY = (me.clientY - rect.top) / rect.height - 0.5;
+          
+          aboutImage.style.transform = `perspective(1000px) rotateY(${mouseX * 3}deg) rotateX(${-mouseY * 3}deg) scale(1.02)`;
+        }, 16);
+
+        aboutSection.addEventListener('mousemove', handleMouseMove);
+        aboutSection.addEventListener('mouseleave', function() {
+          aboutImage.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale(1)';
+        });
+      }
+    }
+
+    // Lazy loading for team images
+    const teamImages = /** @type {NodeListOf<HTMLImageElement>} */(document.querySelectorAll('.team-photo img'));
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = /** @type {HTMLImageElement} */(entry.target);
+            img.addEventListener('error', function() {
+              img.src = 'https://via.placeholder.com/300x300/003366/FFFFFF?text=Team+Member';
+              img.alt = 'Miembro del equipo';
+            });
+            observer.unobserve(img);
+          }
+        });
+      });
+
+      teamImages.forEach(img => imageObserver.observe(img));
+    }
   }
   
   // Efecto de números animados en estadísticas
-  const stats = document.querySelectorAll('.stat p');
+  const stats = /** @type {NodeListOf<HTMLElement>} */(document.querySelectorAll('.stat p'));
   let animated = false;
   
   function animateStats() {
@@ -138,15 +233,16 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Efecto 3D en las tarjetas interactivas
-  const cards = document.querySelectorAll('.interactive-card');
+  const cards = /** @type {NodeListOf<HTMLElement>} */(document.querySelectorAll('.interactive-card'));
   
   cards.forEach(card => {
     card.addEventListener('mousemove', e => {
       if (window.innerWidth < 768) return; // Solo en pantallas grandes
       
+      const me = /** @type {MouseEvent} */(e);
       const cardRect = card.getBoundingClientRect();
-      const cardX = e.clientX - cardRect.left;
-      const cardY = e.clientY - cardRect.top;
+      const cardX = me.clientX - cardRect.left;
+      const cardY = me.clientY - cardRect.top;
       
       // Calcular la posición relativa del ratón dentro de la tarjeta
       const xRotation = ((cardY - cardRect.height / 2) / cardRect.height) * 10;
@@ -180,12 +276,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 800);
     });
   });
-});
+})();
 
 // Efecto parallax avanzado para la hero section
 document.addEventListener('DOMContentLoaded', function() {
   // Parallax para Hero Section
-  const heroSection = document.querySelector('.hero-section');
+  const heroSection = /** @type {HTMLElement | null} */(document.querySelector('.hero-section'));
   
   if (heroSection && window.innerWidth > 768) {
     window.addEventListener('scroll', function() {
@@ -198,8 +294,11 @@ document.addEventListener('DOMContentLoaded', function() {
       // Efecto de desvanecimiento de la hero section al hacer scroll
       if (scrollPosition < heroSection.offsetHeight) {
         const opacity = 1 - (scrollPosition / heroSection.offsetHeight * 1.5);
-        heroSection.querySelector('.hero-content').style.opacity = Math.max(opacity, 0);
-        heroSection.querySelector('.hero-content').style.transform = `translateY(${scrollPosition * 0.2}px)`;
+        const heroContent = heroSection.querySelector('.hero-content');
+        if (heroContent instanceof HTMLElement) {
+          heroContent.style.opacity = String(Math.max(opacity, 0));
+          heroContent.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+        }
       }
     });
   }

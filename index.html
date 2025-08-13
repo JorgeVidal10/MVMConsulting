@@ -13,8 +13,6 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="image-fallbacks.css" />
-  <link rel="stylesheet" href="animations.css" />
   <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -33,6 +31,7 @@
           <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
+      <a class="btn-cta header-cta" href="https://wa.me/526627200496?text=Me%20interesan%20los%20servicios%20de%20MVM%20Consulting%20Group" target="_blank" rel="noopener" aria-label="Conversemos por WhatsApp">CONVERSEMOS</a>
       <button class="menu-btn" id="menuBtn" aria-label="Menú de navegación"><i class="fas fa-bars"></i></button>
     </div>
   </header>
@@ -46,86 +45,40 @@
       <a href="#contact" class="btn-primary" data-aos="zoom-in" data-aos-delay="800">Conversemos</a>
     </div>
   </section>
-
+  
   <!-- Services Section -->
   <section id="services" class="services-section">
     <div class="container">
       <div class="section-title-container" data-aos="fade-up">
         <span class="section-subtitle">Lo que ofrecemos</span>
         <h2>Nuestros Servicios</h2>
-        <p class="section-description">Soluciones especializadas para transformar empresas familiares en organizaciones de alto rendimiento con estándares internacionales.</p>
       </div>
       <div class="cards-grid">
-        <div class="card interactive-card" data-aos="fade-up" data-aos-delay="100" style="--i:0">
-          <div class="card-icon-container">
-            <i class="fas fa-building card-icon"></i>
-            <i class="fas fa-sitemap card-icon-hover"></i>
-          </div>
+        <a class="card" href="institucionalizacion.html" aria-label="Explorar Institucionalización" data-aos="fade-up" data-aos-delay="100">
           <h3>📘 Institucionalización</h3>
-          <p>Definición de visión institucional, diseño de estructura organizacional y creación de políticas para un gobierno sólido.</p>
-          <ul class="card-details">
-            <li><i class="fas fa-check-circle"></i> Planes de sucesión directiva y patrimonial</li>
-            <li><i class="fas fa-check-circle"></i> Políticas y procedimientos empresariales</li>
-            <li><i class="fas fa-check-circle"></i> Sistemas de control y manuales</li>
-          </ul>
-          <a href="institucionalizacion.html" class="card-cta">Explorar soluciones <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="card interactive-card" data-aos="fade-up" data-aos-delay="200" style="--i:1">
-          <div class="card-icon-container">
-            <i class="fas fa-chess-knight card-icon"></i>
-            <i class="fas fa-bullseye card-icon-hover"></i>
-          </div>
+          <p>Creamos una visión clara para tu empresa. Diseñamos la estructura que le da forma. Establecemos reglas simples que la mantienen fuerte y lista para crecer.</p>
+          <span class="card-cta">Explorar soluciones</span>
+        </a>
+        <a class="card" href="estrategia.html" aria-label="Explorar Estrategia" data-aos="fade-up" data-aos-delay="200">
           <h3>🎯 Estrategia</h3>
-          <p>Diagnóstico situacional, detección de oportunidades y planificación estratégica integral para el crecimiento sostenible.</p>
-          <ul class="card-details">
-            <li><i class="fas fa-check-circle"></i> Benchmarking y análisis de tendencias</li>
-            <li><i class="fas fa-check-circle"></i> Objetivos estratégicos de corto y largo plazo</li>
-            <li><i class="fas fa-check-circle"></i> Ventajas competitivas sostenibles</li>
-          </ul>
-          <a href="estrategia.html" class="card-cta">Explorar soluciones <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="card interactive-card" data-aos="fade-up" data-aos-delay="300" style="--i:2">
-          <div class="card-icon-container">
-            <i class="fas fa-chart-line card-icon"></i>
-            <i class="fas fa-calculator card-icon-hover"></i>
-          </div>
+          <p>Entendemos dónde está tu empresa hoy. Encontramos las oportunidades que otros no ven. Creamos un plan para crecer de forma sólida y sostenible.</p>
+          <span class="card-cta">Explorar soluciones</span>
+        </a>
+        <a class="card" href="finanzas.html" aria-label="Explorar Finanzas" data-aos="fade-up" data-aos-delay="300">
           <h3>💼 Finanzas</h3>
-          <p>Análisis financiero integral, proyecciones de rentabilidad y optimización de costos para maximizar el valor empresarial.</p>
-          <ul class="card-details">
-            <li><i class="fas fa-check-circle"></i> Modelos financieros comparativos</li>
-            <li><i class="fas fa-check-circle"></i> Análisis de rentabilidad por unidad</li>
-            <li><i class="fas fa-check-circle"></i> Optimización de costos y flujos</li>
-          </ul>
-          <a href="finanzas.html" class="card-cta">Explorar soluciones <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="card interactive-card" data-aos="fade-up" data-aos-delay="400" style="--i:3">
-          <div class="card-icon-container">
-            <i class="fas fa-users card-icon"></i>
-            <i class="fas fa-heart card-icon-hover"></i>
-          </div>
+          <p>Analizamos tus finanzas a fondo. Proyectamos tu rentabilidad. Optimizamos costos para que tu empresa valga más y gane más.</p>
+          <span class="card-cta">Explorar soluciones</span>
+        </a>
+        <a class="card" href="cultura-organizacional.html" aria-label="Explorar Cultura Organizacional" data-aos="fade-up" data-aos-delay="400">
           <h3>🧠 Cultura Organizacional</h3>
-          <p>Diseño y fortalecimiento de cultura empresarial, diagnóstico de clima laboral y programas de engagement.</p>
-          <ul class="card-details">
-            <li><i class="fas fa-check-circle"></i> Diagnóstico de clima laboral</li>
-            <li><i class="fas fa-check-circle"></i> Programas de reconocimiento</li>
-            <li><i class="fas fa-check-circle"></i> Profesionalización del talento</li>
-          </ul>
-          <a href="cultura-organizacional.html" class="card-cta">Explorar soluciones <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="card interactive-card" data-aos="fade-up" data-aos-delay="500" style="--i:4">
-          <div class="card-icon-container">
-            <i class="fas fa-cogs card-icon"></i>
-            <i class="fas fa-tasks card-icon-hover"></i>
-          </div>
+          <p>Creamos una cultura que inspira. Medimos cómo se siente tu equipo. Diseñamos programas que lo motivan y lo conectan con tu empresa.</p>
+          <span class="card-cta">Explorar soluciones</span>
+        </a>
+        <a class="card" href="implementacion.html" aria-label="Explorar Implementación y Seguimiento" data-aos="fade-up" data-aos-delay="500">
           <h3>🛠️ Implementación y Seguimiento</h3>
-          <p>KPIs, monitoreo estratégico y acompañamiento durante la implementación para garantizar resultados sostenibles.</p>
-          <ul class="card-details">
-            <li><i class="fas fa-check-circle"></i> KPIs y metas SMART</li>
-            <li><i class="fas fa-check-circle"></i> Cronograma de implementación</li>
-            <li><i class="fas fa-check-circle"></i> Shadow consulting</li>
-          </ul>
-          <a href="implementacion.html" class="card-cta">Explorar soluciones <i class="fas fa-arrow-right"></i></a>
-        </div>
+          <p>Definimos lo que importa medir. Seguimos tu progreso de cerca. Te acompañamos en la ejecución para que los resultados se mantengan en el tiempo.</p>
+          <span class="card-cta">Explorar soluciones</span>
+        </a>
       </div>
     </div>
   </section>
@@ -140,19 +93,19 @@
       </div>
       <div class="stats-grid" id="statsGrid">
         <div class="stat" data-aos="fade-up" data-aos-delay="100" style="--i:0">
-          <h4>PIB Estatal (2023)</h4>
+          <h4><i class="fas fa-landmark"></i> PIB Estatal (2023)</h4>
           <p>840 mil millones MXN</p>
         </div>
         <div class="stat" data-aos="fade-up" data-aos-delay="200" style="--i:1">
-          <h4>Crecimiento PIB</h4>
+          <h4><i class="fas fa-chart-line"></i> Crecimiento PIB</h4>
           <p>+4.9%</p>
         </div>
         <div class="stat" data-aos="fade-up" data-aos-delay="300" style="--i:2">
-          <h4>Exportaciones (2024)</h4>
+          <h4><i class="fas fa-file-invoice-dollar"></i> Exportaciones (2024)</h4>
           <p>21,259 MDD</p>
         </div>
         <div class="stat" data-aos="fade-up" data-aos-delay="400" style="--i:3">
-          <h4>Desempleo</h4>
+          <h4><i class="fas fa-briefcase"></i> Desempleo</h4>
           <p>3.57%</p>
         </div>
       </div>
@@ -161,20 +114,17 @@
 
   <!-- About Section -->
   <section id="about" class="about-section">
-    <div class="container about-grid">
-      <div class="about-text" data-aos="fade-right">
-        <span class="section-subtitle">Nuestra firma</span>
-        <h2>Sobre MVM Consultores</h2>
-        <p>En MVM Consultores combinamos la tradición de la empresa familiar con metodologías de clase mundial. Nuestro enfoque 360° abarca Gobierno, Operaciones, Talento y Tecnología para garantizar resultados sostenibles y de alto impacto.</p>
-        <ul>
-          <li><i class="fas fa-check"></i>4 pilares integrales para una transformación holística</li>
-          <li><i class="fas fa-check"></i>Metodología MVM-360™ con estándares internacionales</li>
-          <li><i class="fas fa-check"></i>Resultados medibles y casos de éxito locales documentados</li>
-        </ul>
+    <div class="container">
+      <div class="section-title-container" data-aos="fade-up">
+        <span class="section-subtitle">Quiénes somos</span>
+        <h2>Nuestra Firma</h2>
+        <p>Combinamos la tradición de las empresas familiares con metodologías de clase mundial. Cobertura integral en Gobierno, Operaciones, Talento y Tecnología.</p>
       </div>
-      <div class="about-image" data-aos="fade-left">
-        <img src="https://reddinconsultants.com/wp-content/uploads/2023/02/consultoria-2.jpg" alt="Equipo MVM Consultores" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600/003366/FFFFFF?text=MVM+Consultores';this.onerror='';" />
-      </div>
+      <ul class="pillars-list" data-aos="fade-up" data-aos-delay="150">
+        <li><i class="fas fa-check"></i> 4 pilares integrales para una transformación holística.</li>
+        <li><i class="fas fa-check"></i> Metodología MVM-360™ con estándares internacionales.</li>
+        <li><i class="fas fa-check"></i> Resultados medibles y casos de éxito documentados.</li>
+      </ul>
     </div>
   </section>
 
@@ -182,28 +132,21 @@
   <section id="team" class="team-section">
     <div class="container">
       <div class="section-title-container" data-aos="fade-up">
-        <span class="section-subtitle">Conoce al equipo</span>
+        <span class="section-subtitle">Personas</span>
         <h2>Nuestro Equipo</h2>
-        <p class="section-description">Profesionales dedicados a transformar tu empresa familiar.</p>
       </div>
-      <div class="team-grid">
-        <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-          <div class="team-photo">
-            <img src="team/jorgevidal.jpeg" alt="Jorge Vidal" loading="lazy" />
-          </div>
-          <h4 class="team-name">Jorge Vidal</h4>
+      <div class="cards-grid">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <img src="team/jorgevidal.jpeg" alt="Jorge Vidal" class="team-photo" />
+          <h3>Jorge Vidal</h3>
         </div>
-        <div class="team-member" data-aos="fade-up" data-aos-delay="200">
-          <div class="team-photo">
-            <img src="team/josemiranda.jpeg" alt="José Miranda" loading="lazy" />
-          </div>
-          <h4 class="team-name">José Miranda</h4>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <img src="team/josemiranda.jpeg" alt="José Miranda" class="team-photo" />
+          <h3>José Miranda</h3>
         </div>
-        <div class="team-member" data-aos="fade-up" data-aos-delay="300">
-          <div class="team-photo">
-            <img src="team/josemiranda.jpeg" alt="José Miranda" loading="lazy" />
-          </div>
-          <h4 class="team-name">José Miranda</h4>
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <img src="team/RobertoMontero.jpeg" alt="Roberto Montero" class="team-photo" />
+          <h3>Roberto Montero</h3>
         </div>
       </div>
     </div>
@@ -213,9 +156,44 @@
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="section-title-container" data-aos="fade-up">
-        <span class="section-subtitle">Agenda una consulta</span>
-        <h2>Contáctanos</h2>
-        <p class="section-description">Estamos listos para escuchar tus necesidades y proponer soluciones estratégicas adaptadas a tu empresa.</p>
+        <span class="section-subtitle">Hablemos</span>
+        <h2>Contacto</h2>
+        <p>Estamos listos para escuchar tus necesidades y proponer soluciones estratégicas adaptadas a tu empresa.</p>
+        <p>
+          <a class="btn-primary" href="https://wa.me/526627200496?text=Me%20interesan%20los%20servicios%20de%20MVM%20Consulting%20Group" target="_blank" rel="noopener">Agendar Consulta</a>
+        </p>
+      </div>
+      <div class="contact-quicklinks" data-aos="fade-up" data-aos-delay="150">
+        <div class="ql-block">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#team">Equipo</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="ql-block">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="institucionalizacion.html">Institucionalización</a></li>
+            <li><a href="estrategia.html">Estrategia</a></li>
+            <li><a href="finanzas.html">Finanzas</a></li>
+            <li><a href="cultura-organizacional.html">Cultura Organizacional</a></li>
+            <li><a href="implementacion.html">Implementación</a></li>
+          </ul>
+        </div>
+        <div class="ql-block">
+          <h4>Redes</h4>
+          <div class="social-media-grid">
+            <a href="#" class="social-item linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+            <a href="#" class="social-item facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+            <a href="#" class="social-item instagram" aria-label="Instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+            <a href="#" class="social-item twitter" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i><span>X</span></a>
+            <a href="#" class="social-item medium" aria-label="Medium"><i class="fab fa-medium-m"></i><span>Medium</span></a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -235,7 +213,6 @@
           <h4>Enlaces Rápidos</h4>
           <ul>
             <li><a href="#services">Servicios</a></li>
-            <li><a href="#insights">Insights</a></li>
             <li><a href="#about">Sobre Nosotros</a></li>
             <li><a href="#team">Equipo</a></li>
             <li><a href="#contact">Contacto</a></li>
@@ -246,11 +223,11 @@
         <div class="footer-services">
           <h4>Servicios</h4>
           <ul>
-            <li><a href="institucionalizacion.html">Institucionalización</a></li>
-            <li><a href="estrategia.html">Estrategia</a></li>
-            <li><a href="finanzas.html">Finanzas</a></li>
-            <li><a href="cultura-organizacional.html">Cultura Organizacional</a></li>
-            <li><a href="implementacion.html">Implementación</a></li>
+            <li><a href="institucionalizacion.html" aria-label="Servicios de Institucionalización">Institucionalización</a></li>
+            <li><a href="estrategia.html" aria-label="Servicios de Estrategia Empresarial">Estrategia Empresarial</a></li>
+            <li><a href="finanzas.html" aria-label="Servicios de Finanzas Corporativas">Finanzas Corporativas</a></li>
+            <li><a href="cultura-organizacional.html" aria-label="Servicios de Cultura Organizacional">Cultura Organizacional</a></li>
+            <li><a href="implementacion.html" aria-label="Servicios de Implementación y Seguimiento">Implementación</a></li>
           </ul>
         </div>
         
@@ -298,16 +275,17 @@
   </footer>
 
   <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/526627200496?text=Me%20interesan%20los%20servicios%20de%20MVM%20Consulting%20Group" 
-     class="whatsapp-float" 
-     target="_blank" 
-     rel="noopener noreferrer"
-     aria-label="Contactar por WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <div class="whatsapp-float">
+    <a href="https://wa.me/526627200496" target="_blank" aria-label="Contactar por WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
 
   <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    if (window.AOS) { AOS.init({ duration: 800, once: true }); }
+  </script>
   <!-- Custom Scripts -->
   <script src="script.js"></script>
 </body>

@@ -1,147 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Implementación - MVM Consulting</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="animations.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Servicios de Implementación - MVM Consultores. Gestión de proyectos, ejecución estratégica y monitoreo para resultados sostenibles." />
+  <title>Implementación | MVM Consultores</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="image-fallbacks.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="logo.png" alt="MVM Consulting" class="logo-img">
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#about" class="nav-link">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#services" class="nav-link">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#team" class="nav-link">Equipo</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#contact" class="nav-link">Contacto</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo"><img src="logo.png" alt="MVM Consultores" class="logo-img"></a>
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="index.html#services">Servicios</a></li>
+          <li><a href="index.html#insights">Insights</a></li>
+          <li><a href="index.html#about">Sobre Nosotros</a></li>
+          <li><a href="index.html#team">Equipo</a></li>
+          <li><a href="index.html#contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menú de navegación"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="service-hero">
+    <div class="overlay"></div>
+    <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a> / <span>Servicios</span> / <span>Implementación</span>
+      </div>
+      <h1>🛠️ Implementación</h1>
+      <p class="hero-subtitle">Ejecución efectiva para resultados sostenibles</p>
+      <p class="hero-description">Garantizamos la ejecución exitosa de estrategias y proyectos organizacionales a través de metodologías probadas, gestión profesional de proyectos y acompañamiento integral hasta lograr resultados medibles.</p>
+    </div>
+  </section>
+
+  <!-- Service Overview -->
+  <section class="service-overview">
+    <div class="container">
+      <div class="overview-content" data-aos="fade-up" data-aos-duration="800">
+        <h2>Servicios de Implementación</h2>
+        <p>Transformamos planes en resultados concretos. Garantizamos la ejecución exitosa de estrategias y proyectos organizacionales a través de metodologías probadas y acompañamiento integral.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Detail -->
+  <section class="services-detail">
+    <div class="container">
+      <div class="services-grid">
+        
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="100" onclick="openWhatsApp('🛠️ Gestión de Proyectos')">
+          <div class="service-icon">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <h3>Gestión de Proyectos</h3>
+          <p>Dirección integral de proyectos estratégicos aplicando metodologías ágiles y tradicionales para garantizar entrega en tiempo y presupuesto.</p>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="service-hero">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <div class="hero-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h1>Implementación</h1>
-                <p class="hero-subtitle">Ejecución efectiva de estrategias y proyectos organizacionales para garantizar resultados sostenibles</p>
-                <div class="hero-features">
-                    <span><i class="fas fa-check"></i> Gestión de Proyectos</span>
-                    <span><i class="fas fa-check"></i> Ejecución Estratégica</span>
-                    <span><i class="fas fa-check"></i> Monitoreo y Control</span>
-                </div>
-            </div>
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="200" onclick="openWhatsApp('📋 Ejecución de Planes Estratégicos')">
+          <div class="service-icon">
+            <i class="fas fa-route"></i>
+          </div>
+          <h3>Ejecución de Planes Estratégicos</h3>
+          <p>Implementación sistemática de planes estratégicos, traducción de objetivos en acciones concretas y seguimiento de resultados.</p>
         </div>
-    </section>
 
-    <!-- Services Grid -->
-    <section class="service-details">
-        <div class="container">
-            <h2 data-aos="fade-up">Nuestros Servicios de Implementación</h2>
-            <div class="services-grid" data-aos="fade-up" data-aos-delay="200">
-                
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="service-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>Gestión de Proyectos</h3>
-                    <p>Dirección integral de proyectos estratégicos aplicando metodologías ágiles y tradicionales para garantizar entrega en tiempo y presupuesto.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="service-icon">
-                        <i class="fas fa-route"></i>
-                    </div>
-                    <h3>Ejecución de Planes Estratégicos</h3>
-                    <p>Implementación sistemática de planes estratégicos, traducción de objetivos en acciones concretas y seguimiento de resultados.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Monitoreo y Control</h3>
-                    <p>Implementación de sistemas de seguimiento, tableros de control en tiempo real y reportes ejecutivos para la toma de decisiones.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Gestión del Cambio Organizacional</h3>
-                    <p>Acompañamiento integral en procesos de transformación, manejo de resistencias y aseguramiento de adopción sostenible.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Optimización de Procesos</h3>
-                    <p>Rediseño e implementación de procesos mejorados, automatización de flujos de trabajo y eliminación de actividades sin valor.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Implementación Tecnológica</h3>
-                    <p>Gestión de proyectos de transformación digital, implementación de sistemas ERP, CRM y plataformas tecnológicas especializadas.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="700">
-                    <div class="service-icon">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <h3>Capacitación y Adopción</h3>
-                    <p>Desarrollo de programas de capacitación, gestión del conocimiento y transferencia de competencias para asegurar la sostenibilidad.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="800">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Gestión de Riesgos de Proyecto</h3>
-                    <p>Identificación, análisis y mitigación de riesgos de implementación, planes de contingencia y gestión proactiva de problemas.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="900">
-                    <div class="service-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <h3>Aseguramiento de Calidad</h3>
-                    <p>Implementación de estándares de calidad, auditorías de proceso, certificaciones ISO y mejora continua.</p>
-                </div>
-
-            </div>
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="300" onclick="openWhatsApp('📊 Monitoreo y Control')">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Monitoreo y Control</h3>
+          <p>Implementación de sistemas de seguimiento, tableros de control en tiempo real y reportes ejecutivos para la toma de decisiones.</p>
         </div>
-    </section>
+
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="400" onclick="openWhatsApp('🔄 Gestión del Cambio Organizacional')">
+          <div class="service-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h3>Gestión del Cambio Organizacional</h3>
+          <p>Acompañamiento integral en procesos de transformación, manejo de resistencias y aseguramiento de adopción sostenible.</p>
+        </div>
+
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="500" onclick="openWhatsApp('⚙️ Optimización de Procesos')">
+          <div class="service-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Optimización de Procesos</h3>
+          <p>Rediseño e implementación de procesos mejorados, automatización de flujos de trabajo y eliminación de actividades sin valor.</p>
+        </div>
+
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="600" onclick="openWhatsApp('💻 Implementación Tecnológica')">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Implementación Tecnológica</h3>
+          <p>Gestión de proyectos de transformación digital, implementación de sistemas ERP, CRM y plataformas tecnológicas especializadas.</p>
+        </div>
+
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="700" onclick="openWhatsApp('👥 Capacitación y Adopción')">
+          <div class="service-icon">
+            <i class="fas fa-users-cog"></i>
+          </div>
+          <h3>Capacitación y Adopción</h3>
+          <p>Desarrollo de programas de capacitación, gestión del conocimiento y transferencia de competencias para asegurar la sostenibilidad.</p>
+        </div>
+
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="800" onclick="openWhatsApp('🛡️ Gestión de Riesgos de Proyecto')">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Gestión de Riesgos de Proyecto</h3>
+          <p>Identificación, análisis y mitigación de riesgos de implementación, planes de contingencia y gestión proactiva de problemas.</p>
+        </div>
+
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="900" onclick="openWhatsApp('🏆 Aseguramiento de Calidad')">
+          <div class="service-icon">
+            <i class="fas fa-medal"></i>
+          </div>
+          <h3>Aseguramiento de Calidad</h3>
+          <p>Implementación de estándares de calidad, auditorías de proceso, certificaciones ISO y mejora continua.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
     <!-- Process Timeline -->
     <section class="process-section">
@@ -185,131 +183,86 @@
         </div>
     </section>
 
-    <!-- Methodology Section -->
-    <section class="methodology-section">
-        <div class="container">
-            <div class="methodology-content" data-aos="fade-up">
-                <h2>Metodologías y Frameworks</h2>
-                <div class="methodology-grid" data-aos="fade-up" data-aos-delay="200">
-                    
-                    <div class="methodology-item" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="method-icon">
-                            <i class="fas fa-infinity"></i>
-                        </div>
-                        <h3>Agile & Scrum</h3>
-                        <p>Implementación iterativa e incremental para proyectos complejos</p>
-                    </div>
-
-                    <div class="methodology-item" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="method-icon">
-                            <i class="fas fa-stream"></i>
-                        </div>
-                        <h3>PMI - PMP</h3>
-                        <p>Gestión profesional de proyectos con estándares internacionales</p>
-                    </div>
-
-                    <div class="methodology-item" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="method-icon">
-                            <i class="fas fa-chart-gantt"></i>
-                        </div>
-                        <h3>Lean Six Sigma</h3>
-                        <p>Optimización de procesos y eliminación de desperdicios</p>
-                    </div>
-
-                    <div class="methodology-item" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="method-icon">
-                            <i class="fas fa-magic"></i>
-                        </div>
-                        <h3>Design Thinking</h3>
-                        <p>Innovación centrada en el usuario para soluciones creativas</p>
-                    </div>
-
-                </div>
-            </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section company-info">
+          <div class="company-logo">
+            <img src="logo.png" alt="MVM Consultores">
+            <h3>MVM Consultores</h3>
+          </div>
+          <p class="company-description">Transformando organizaciones a través de consultoría estratégica especializada y soluciones integrales de gestión empresarial.</p>
+          <div class="social-media-grid">
+            <a href="#" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content" data-aos="zoom-in">
-                <h2>¿Listo para ejecutar su estrategia?</h2>
-                <p>Nuestro equipo especializado garantizará la implementación exitosa de sus proyectos estratégicos</p>
-                <a href="index.html#contact" class="btn btn-primary">
-                    <i class="fas fa-comments"></i>
-                    Solicitar Consultoría
-                </a>
-            </div>
+        
+        <div class="footer-section">
+          <h4>Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="institucionalizacion.html">Institucionalización</a></li>
+            <li><a href="estrategia.html">Estrategia Empresarial</a></li>
+            <li><a href="finanzas.html">Finanzas Corporativas</a></li>
+            <li><a href="cultura-organizacional.html">Cultura Organizacional</a></li>
+            <li><a href="implementacion.html">Implementación</a></li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="MVM Consulting">
-                        <h3>MVM Consulting</h3>
-                    </div>
-                    <p>Transformando organizaciones a través de consultoría estratégica especializada.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Servicios</h4>
-                    <ul>
-                        <li><a href="institucionalizacion.html">Institucionalización</a></li>
-                        <li><a href="estrategia.html">Estrategia</a></li>
-                        <li><a href="finanzas.html">Finanzas</a></li>
-                        <li><a href="cultura-organizacional.html">Cultura Organizacional</a></li>
-                        <li><a href="implementacion.html">Implementación</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> info@mvmconsulting.com</p>
-                        <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Síguenos</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 MVM Consulting. Todos los derechos reservados.</p>
-            </div>
+        
+        <div class="footer-section">
+          <h4>Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#about">Sobre Nosotros</a></li>
+            <li><a href="index.html#team">Nuestro Equipo</a></li>
+            <li><a href="index.html#insights">Insights</a></li>
+            <li><a href="index.html#contact">Contacto</a></li>
+          </ul>
         </div>
-    </footer>
+        
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> info@mvmconsulting.com</p>
+            <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+            <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 MVM Consultores. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20implementación%20de%20MVM%20Consulting" 
-       class="whatsapp-float" 
-       target="_blank" 
-       aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20implementación%20de%20MVM%20Consulting" 
+     class="whatsapp-float" 
+     target="_blank" 
+     aria-label="Contactar por WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+  </a>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-    </script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // WhatsApp integration for service cards
+    function openWhatsApp(service) {
+      const message = `Hola, me interesa conocer más sobre el servicio de ${service} de MVM Consultores.`;
+      const whatsappURL = `https://wa.me/573001234567?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
 </body>
 </html>

@@ -1,271 +1,306 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cultura Organizacional - MVM Consulting</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="animations.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Servicios de Cultura Organizacional - MVM Consultores. Desarrollo de liderazgo, gestión del talento y transformación cultural empresarial." />
+  <title>Cultura Organizacional | MVM Consultores</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="image-fallbacks.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="logo.png" alt="MVM Consulting" class="logo-img">
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#about" class="nav-link">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#services" class="nav-link">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#team" class="nav-link">Equipo</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#contact" class="nav-link">Contacto</a>
-                </li>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo"><img src="logo.png" alt="MVM Consultores" class="logo-img"></a>
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="index.html#services">Servicios</a></li>
+          <li><a href="index.html#insights">Insights</a></li>
+          <li><a href="index.html#about">Sobre Nosotros</a></li>
+          <li><a href="index.html#team">Equipo</a></li>
+          <li><a href="index.html#contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menú de navegación"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="service-hero">
+    <div class="overlay"></div>
+    <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a> / <span>Servicios</span> / <span>Cultura Organizacional</span>
+      </div>
+      <h1>🧠 Cultura Organizacional</h1>
+      <p class="hero-subtitle">Desarrollando organizaciones de alto rendimiento</p>
+      <p class="hero-description">Transformamos la cultura empresarial a través del desarrollo del talento humano, fortalecimiento del liderazgo y creación de ambientes de trabajo que impulsan la excelencia organizacional.</p>
+    </div>
+  </section>
+
+  <!-- Service Overview -->
+  <section class="service-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-content" data-aos="fade-right">
+          <h2>¿Qué incluye nuestro servicio de Cultura Organizacional?</h2>
+          <p>Nuestro enfoque integral de cultura organizacional está diseñado para empresas que buscan desarrollar equipos de alto rendimiento y crear ambientes de trabajo que maximizan el potencial humano. Desarrollamos estrategias culturales que alinean el talento con los objetivos organizacionales.</p>
+          
+          <div class="key-benefits">
+            <h3>Beneficios Clave</h3>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Mejora significativa del clima laboral y engagement</li>
+              <li><i class="fas fa-check-circle"></i> Desarrollo de liderazgo en todos los niveles</li>
+              <li><i class="fas fa-check-circle"></i> Reducción de la rotación de personal clave</li>
+              <li><i class="fas fa-check-circle"></i> Aumento de la productividad y colaboración</li>
+              <li><i class="fas fa-check-circle"></i> Fortalecimiento de la propuesta de valor del empleado</li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+          </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="service-hero">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <div class="hero-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h1>Cultura Organizacional</h1>
-                <p class="hero-subtitle">Desarrollo del talento humano y fortalecimiento de la cultura corporativa para organizaciones de alto rendimiento</p>
-                <div class="hero-features">
-                    <span><i class="fas fa-check"></i> Gestión del Talento</span>
-                    <span><i class="fas fa-check"></i> Liderazgo</span>
-                    <span><i class="fas fa-check"></i> Transformación Cultural</span>
-                </div>
-            </div>
+        
+        <div class="overview-image" data-aos="fade-left">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3" alt="Cultura Organizacional" loading="lazy" />
         </div>
-    </section>
-
-    <!-- Services Grid -->
-    <section class="service-details">
-        <div class="container">
-            <h2 data-aos="fade-up">Nuestros Servicios de Cultura Organizacional</h2>
-            <div class="services-grid" data-aos="fade-up" data-aos-delay="200">
-                
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Desarrollo de Liderazgo</h3>
-                    <p>Programas de formación y coaching ejecutivo para fortalecer competencias de liderazgo en todos los niveles organizacionales.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="service-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Gestión del Clima Laboral</h3>
-                    <p>Diagnóstico y mejora del ambiente de trabajo, implementación de iniciativas de bienestar y engagement de empleados.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Capacitación y Desarrollo</h3>
-                    <p>Diseño e implementación de programas de capacitación, planes de carrera y desarrollo de competencias técnicas y blandas.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Gestión por Competencias</h3>
-                    <p>Definición de perfiles de cargo, evaluación de competencias, diseño de sistemas de evaluación de desempeño basados en competencias.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="service-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Gestión del Cambio</h3>
-                    <p>Acompañamiento en procesos de transformación organizacional, manejo de resistencias y comunicación del cambio.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="service-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Comunicación Interna</h3>
-                    <p>Desarrollo de estrategias de comunicación interna efectiva, canales de comunicación bidireccional y cultura de transparencia.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="700">
-                    <div class="service-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Reconocimiento e Incentivos</h3>
-                    <p>Diseño de sistemas de reconocimiento, programas de incentivos y esquemas de compensación variable alineados con objetivos.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="800">
-                    <div class="service-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>Diversidad e Inclusión</h3>
-                    <p>Implementación de políticas de diversidad, programas de inclusión y creación de ambientes de trabajo equitativos y respetuosos.</p>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="900">
-                    <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Innovación y Creatividad</h3>
-                    <p>Fomento de la cultura de innovación, metodologías de creatividad, espacios colaborativos y gestión de ideas disruptivas.</p>
-                </div>
-
-            </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services List -->
+  <section class="services-detail">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Servicios Específicos</h2>
+      
+      <div class="services-grid">
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="100" onclick="window.location.href='index.html#contact'">
+          <div class="service-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h4>Desarrollo de Liderazgo</h4>
+          <p>Programas de formación y coaching ejecutivo para fortalecer competencias de liderazgo en todos los niveles organizacionales.</p>
         </div>
-    </section>
 
-    <!-- Process Timeline -->
-    <section class="process-section">
-        <div class="container">
-            <h2 data-aos="fade-up">Nuestro Enfoque de Transformación Cultural</h2>
-            <div class="process-timeline" data-aos="fade-up" data-aos-delay="200">
-                
-                <div class="process-step" data-aos="fade-right" data-aos-delay="100">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Diagnóstico Cultural</h3>
-                        <p>Evaluación integral de la cultura actual, clima organizacional, valores vividos vs. declarados y identificación de brechas.</p>
-                    </div>
-                </div>
-
-                <div class="process-step" data-aos="fade-left" data-aos-delay="200">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Diseño de Cultura Deseada</h3>
-                        <p>Co-creación de la cultura objetivo, definición de valores comportamentales y alineación con la estrategia organizacional.</p>
-                    </div>
-                </div>
-
-                <div class="process-step" data-aos="fade-right" data-aos-delay="300">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Plan de Transformación</h3>
-                        <p>Desarrollo de hoja de ruta detallada, definición de iniciativas específicas y cronograma de implementación.</p>
-                    </div>
-                </div>
-
-                <div class="process-step" data-aos="fade-left" data-aos-delay="400">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Implementación y Seguimiento</h3>
-                        <p>Ejecución de iniciativas, medición de indicadores culturales y ajustes continuos para asegurar la sostenibilidad.</p>
-                    </div>
-                </div>
-
-            </div>
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="200" onclick="window.location.href='index.html#contact'">
+          <div class="service-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h4>Gestión del Clima Laboral</h4>
+          <p>Diagnóstico y mejora del ambiente de trabajo, implementación de iniciativas de bienestar y engagement de empleados.</p>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content" data-aos="zoom-in">
-                <h2>¿Listo para transformar su cultura organizacional?</h2>
-                <p>Nuestro equipo especializado lo acompañará en el desarrollo de una cultura de alto rendimiento</p>
-                <a href="index.html#contact" class="btn btn-primary">
-                    <i class="fas fa-comments"></i>
-                    Solicitar Consultoría
-                </a>
-            </div>
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="300" onclick="window.location.href='index.html#contact'">
+          <div class="service-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h4>Capacitación y Desarrollo</h4>
+          <p>Diseño e implementación de programas de capacitación, planes de carrera y desarrollo de competencias técnicas y blandas.</p>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="MVM Consulting">
-                        <h3>MVM Consulting</h3>
-                    </div>
-                    <p>Transformando organizaciones a través de consultoría estratégica especializada.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Servicios</h4>
-                    <ul>
-                        <li><a href="institucionalizacion.html">Institucionalización</a></li>
-                        <li><a href="estrategia.html">Estrategia</a></li>
-                        <li><a href="finanzas.html">Finanzas</a></li>
-                        <li><a href="cultura-organizacional.html">Cultura Organizacional</a></li>
-                        <li><a href="implementacion.html">Implementación</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> info@mvmconsulting.com</p>
-                        <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Síguenos</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 MVM Consulting. Todos los derechos reservados.</p>
-            </div>
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="400" onclick="window.location.href='index.html#contact'">
+          <div class="service-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h4>Gestión por Competencias</h4>
+          <p>Definición de perfiles de cargo, evaluación de competencias, diseño de sistemas de evaluación de desempeño basados en competencias.</p>
         </div>
-    </footer>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20cultura%20organizacional%20de%20MVM%20Consulting" 
-       class="whatsapp-float" 
-       target="_blank" 
-       aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="500" onclick="window.location.href='index.html#contact'">
+          <div class="service-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h4>Gestión del Cambio</h4>
+          <p>Acompañamiento en procesos de transformación organizacional, manejo de resistencias y comunicación del cambio.</p>
+        </div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-    </script>
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="600" onclick="window.location.href='index.html#contact'">
+          <div class="service-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h4>Comunicación Interna</h4>
+          <p>Desarrollo de estrategias de comunicación interna efectiva, canales de comunicación bidireccional y cultura de transparencia.</p>
+        </div>
+
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="700" onclick="window.location.href='index.html#contact'">
+          <div class="service-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h4>Reconocimiento e Incentivos</h4>
+          <p>Diseño de sistemas de reconocimiento, programas de incentivos y esquemas de compensación variable alineados con objetivos.</p>
+        </div>
+
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="800" onclick="window.location.href='index.html#contact'">
+          <div class="service-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h4>Diversidad e Inclusión</h4>
+          <p>Implementación de políticas de diversidad, programas de inclusión y creación de ambientes de trabajo equitativos y respetuosos.</p>
+        </div>
+
+        <div class="service-item clickable-card" data-aos="fade-up" data-aos-delay="900" onclick="window.location.href='index.html#contact'">
+          <div class="service-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h4>Innovación y Creatividad</h4>
+          <p>Fomento de la cultura de innovación, metodologías de creatividad, espacios colaborativos y gestión de ideas disruptivas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Nuestro Proceso</h2>
+      
+      <div class="process-timeline">
+        <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Diagnóstico Cultural</h4>
+            <p>Evaluación integral de la cultura actual, clima organizacional, valores vividos vs. declarados y identificación de brechas.</p>
+          </div>
+        </div>
+
+        <div class="process-step" data-aos="fade-left" data-aos-delay="200">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Diseño de Cultura Deseada</h4>
+            <p>Co-creación de la cultura objetivo, definición de valores comportamentales y alineación con la estrategia organizacional.</p>
+          </div>
+        </div>
+
+        <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Plan de Transformación</h4>
+            <p>Desarrollo de hoja de ruta detallada, definición de iniciativas específicas y cronograma de implementación.</p>
+          </div>
+        </div>
+
+        <div class="process-step" data-aos="fade-left" data-aos-delay="400">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Implementación y Seguimiento</h4>
+            <p>Ejecución de iniciativas, medición de indicadores culturales y ajustes continuos para asegurar la sostenibilidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content" data-aos="fade-up">
+        <h2>¿Listo para transformar su cultura organizacional?</h2>
+        <p>Nuestros expertos están preparados para guiarle en el desarrollo de una cultura de alto rendimiento y equipos excepcionales.</p>
+        <div class="cta-buttons">
+          <a href="index.html#contact" class="btn-primary">Solicitar Consulta</a>
+          <a href="index.html#services" class="btn-secondary">Ver Todos los Servicios</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Logo y descripción -->
+        <div class="footer-brand">
+          <img src="logo.png" alt="MVM Consultores" class="footer-logo">
+          <p class="footer-description">Transformamos empresas familiares en organizaciones de clase mundial a través de institucionalización, profesionalización y transformación digital.</p>
+        </div>
+        
+        <!-- Enlaces rápidos -->
+        <div class="footer-links">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="index.html#services">Servicios</a></li>
+            <li><a href="index.html#insights">Insights</a></li>
+            <li><a href="index.html#about">Sobre Nosotros</a></li>
+            <li><a href="index.html#team">Equipo</a></li>
+            <li><a href="index.html#contact">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <!-- Servicios -->
+        <div class="footer-services">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="institucionalizacion.html">Institucionalización</a></li>
+            <li><a href="estrategia.html">Estrategia</a></li>
+            <li><a href="finanzas.html">Finanzas</a></li>
+            <li><a href="cultura-organizacional.html">Cultura Organizacional</a></li>
+            <li><a href="implementacion.html">Implementación</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contacto y redes sociales -->
+        <div class="footer-contact">
+          <h4>Síguenos</h4>
+          <p>Mantente conectado con nosotros</p>
+          <div class="social-media-grid">
+            <a href="#" class="social-item linkedin" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" class="social-item facebook" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="social-item instagram" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="social-item twitter" aria-label="X (Twitter)">
+              <i class="fab fa-x-twitter"></i>
+              <span>X</span>
+            </a>
+            <a href="#" class="social-item medium" aria-label="Medium">
+              <i class="fab fa-medium-m"></i>
+              <span>Medium</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2025 MVM Consultores. Todos los derechos reservados.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Política de Privacidad</a>
+            <span class="separator">|</span>
+            <a href="#">Términos de Servicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/526627200496?text=Me%20interesan%20los%20servicios%20de%20MVM%20Consulting%20Group" 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>

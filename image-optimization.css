@@ -1,0 +1,147 @@
+/* WebP Image Optimization and Modern Image Support */
+
+/* Modernizr-style feature detection for WebP */
+.webp .hero-section {
+  background-image: url('data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=');
+}
+
+/* Responsive images with WebP support */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Image loading states */
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.image-loaded {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Progressive image enhancement */
+.progressive-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.progressive-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+              linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+              linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+              linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.progressive-image.loading::before {
+  opacity: 1;
+}
+
+/* Critical image optimization */
+.hero-image {
+  content-visibility: auto;
+  contain-intrinsic-size: 1200px 600px;
+}
+
+/* Lazy loading intersection observer styles */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.3s;
+  will-change: opacity;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* Image gallery optimization */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  contain: layout style paint;
+}
+
+.gallery-item {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Print styles for images */
+@media print {
+  .responsive-image, .gallery-item img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+}
+
+/* Accessibility improvements */
+.image-with-caption {
+  position: relative;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.image-with-caption:hover .image-caption {
+  transform: translateY(0);
+}
+
+/* Performance optimizations */
+.critical-image {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 200px;
+}
+
+.non-critical-image {
+  content-visibility: auto;
+  contain-intrinsic-size: 200px 150px;
+}

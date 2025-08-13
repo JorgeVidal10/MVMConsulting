@@ -1,0 +1,90 @@
+{
+  "name": "mvm-consultores-audit",
+  "version": "1.0.0",
+  "description": "Auditoría y testing para MVM Consultores website",
+  "scripts": {
+    "audit:performance": "lighthouse --only-categories=performance --output=html --output-path=./reports/performance.html https://localhost:3000",
+    "audit:accessibility": "lighthouse --only-categories=accessibility --output=html --output-path=./reports/accessibility.html https://localhost:3000",
+    "audit:seo": "lighthouse --only-categories=seo --output=html --output-path=./reports/seo.html https://localhost:3000",
+    "audit:pwa": "lighthouse --only-categories=pwa --output=html --output-path=./reports/pwa.html https://localhost:3000",
+    "audit:full": "lighthouse --output=html --output-path=./reports/full-audit.html https://localhost:3000",
+    "validate:html": "html-validate *.html",
+    "validate:css": "stylelint **/*.css",
+    "validate:js": "eslint **/*.js",
+    "optimize:images": "imagemin '**/*.{jpg,png,svg}' --out-dir=optimized --plugin=imagemin-webp",
+    "test:links": "blc https://localhost:3000 -ro",
+    "test:security": "npm audit && snyk test",
+    "analyze:bundle": "bundlesize",
+    "serve": "http-server . -p 3000 -c-1 -o",
+    "dev": "npm run serve"
+  },
+  "devDependencies": {
+    "lighthouse": "^10.4.0",
+    "html-validate": "^7.13.0",
+    "stylelint": "^15.10.0",
+    "eslint": "^8.45.0",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^7.0.0",
+    "broken-link-checker": "^0.7.8",
+    "snyk": "^1.1200.0",
+    "bundlesize": "^0.18.1",
+    "http-server": "^14.1.1"
+  },
+  "bundlesize": [
+    {
+      "path": "./styles.css",
+      "maxSize": "40 kB"
+    },
+    {
+      "path": "./script.js",
+      "maxSize": "15 kB"
+    },
+    {
+      "path": "./analytics-enhanced.js",
+      "maxSize": "10 kB"
+    }
+  ],
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-console": "warn",
+      "no-unused-vars": "error",
+      "prefer-const": "error",
+      "no-var": "error"
+    }
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard"
+    ],
+    "rules": {
+      "declaration-block-trailing-semicolon": "always",
+      "block-no-empty": true,
+      "color-no-invalid-hex": true
+    }
+  },
+  "author": "MVM Consultores",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JorgeVidal10/MVMConsulting.git"
+  },
+  "keywords": [
+    "consultoría",
+    "empresarial",
+    "transformación",
+    "digital",
+    "sonora",
+    "méxico"
+  ]
+}
