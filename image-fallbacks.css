@@ -65,15 +65,15 @@ img::after {
 /* Progressive image enhancement */
 .progressive-image {
     background: var(--light-gray);
-    transition: filter 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .progressive-image[data-loaded="false"] {
-    filter: blur(5px);
+    opacity: 0.8;
 }
 
 .progressive-image[data-loaded="true"] {
-    filter: blur(0);
+    opacity: 1;
 }
 
 /* Responsive image containers */
